@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARMS Store</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your custom CSS stylesheet -->
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">ARMS Store</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Shop</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <img src="images/cart-icon.png" alt="Cart">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    
+    <section class="banner">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="banner-text ">
+                        <h1 class="text-center">Welcome to the Used iPhone Store</h1>
+                        <p class="text-center">Find the perfect used iPhone at unbeatable prices.</p>
+                        
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+   
+    <!-- Add this code where you want to display the added mobile data -->
+<!-- Add this code where you want to display the fetched mobile data -->
+<section class="mobile-list">
+    <div class="container">
+        <div class="row">
+            {% for mobile in mobiles %}
+            <div class="col-md-4">
+                <div class="mobile-card">
+                    <img src="{{ mobile.image.url }}" alt="{{ mobile.brand }} {{ mobile.model_name }}" class="img-fluid">
+                    <h2>{{ mobile.brand }} {{ mobile.model_name }}</h2>
+                    <p>Condition: {{ mobile.get_condition_display }}</p>
+                    <p>Storage: {{ mobile.storage_capacity }}</p>
+                    <p>Color: {{ mobile.color }}</p>
+                    <p>Price: ${{ mobile.price }}</p>
+                    <a href="{% url 'product' mobile.id %}" class="btn btn-primary">Shop Now</a>
+                    <a href="#" class="btn btn-primary">ADD To Cart</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+
+    
+    <!-- Add more sections using Bootstrap classes as needed -->
+    
+    <footer class="mt-5">
+        <div class="container text-center">
+            <p>&copy; 2023 Arms Store. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+

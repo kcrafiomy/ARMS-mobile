@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Include any additional CSS styles here -->
+</head>
+<body>
+
+<!-- Navigation Bar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">ARMS Store</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+              </form>
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Shop</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">About</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Contact</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <img src="images/cart-icon.png" alt="Cart">
+                </a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<!-- Main Content Area -->
+<div class="container-fluid mt-4">
+    <div class="row">
+        <!-- Sidebar -->
+        <nav class="col-md-3  d-md-block bg-light sidebar">
+            <div class="position-sticky">
+                <h4>Category</h4>
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">All Category</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Add Category</a>
+                    </li>
+                </ul>
+                <h4>Products</h4>
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'allproducts'%}">All Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'dataadd'%}">Add Products</a>
+                    </li>
+                    
+                </ul>
+                <h4>Orders</h4>
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">All Orders</a>
+                    </li>
+                </ul>
+                <!-- Other sidebar items -->
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+            <button class="btn btn-light btn-lg col-5 m-2">totel sale</button>
+            <button class="btn btn-light btn-lg col-5 m-2">totel sale</button>
+            <button class="btn btn-light btn-lg col-5 m-2">totel sale</button>
+            <button class="btn btn-light btn-lg col-5 m-2">totel sale</button>
+            
+            <!-- Banner, Discount, and more sections -->
+        </main>
+        
+        
+    </div>
+</div>
+
+<!-- Footer -->
+<footer class="mt-5">
+    <div class="container text-center">
+        <p>&copy; 2023 Arms Store. All rights reserved.</p>
+    </div>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<!-- Include any additional JavaScript scripts here -->
+</body>
+</html>
+
+
